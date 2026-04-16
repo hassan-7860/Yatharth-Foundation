@@ -24,7 +24,7 @@ export default function FeatureSection() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative h-[400px] rounded-[16px] overflow-hidden shadow-md border-4 border-surface">
-              <Image src="/body-image.jpg" alt="Classroom" fill className="object-cover" referrerPolicy="no-referrer" />
+              <Image src="https://picsum.photos/seed/classroom/800/1000" alt="Classroom" fill className="object-cover" referrerPolicy="no-referrer" />
             </motion.div>
           </div>
         </div>
