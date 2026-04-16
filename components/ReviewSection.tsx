@@ -5,9 +5,12 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const testimonials = [
-  { name: 'Rahul Sharma', role: 'SSC Student', text: 'Highly recommended in Naraina! The faculty is incredibly supportive and the study material is top-notch.' },
-  { name: 'Priya Verma', role: 'Tally Course', text: 'I learned Tally ERP-9 here. The practical sessions helped me secure a job immediately after completion.' },
-  { name: 'Amit Singh', role: 'Railway Aspirant', text: 'Best coaching center in the area. The mock tests and personalized attention made a huge difference.' },
+  { name: 'Rahul Sharma', role: 'SSC Aspirant', text: 'The mock tests here are very similar to the actual exam pattern. It helped me boost my confidence significantly.' },
+  { name: 'Priya Patel', role: 'Tally Course', text: 'I joined for Tally and ended up learning so much more. The practical approach is what makes this place stand out.' },
+  { name: 'Amit Singh', role: 'Railway Student', text: 'The teachers are always available to clear doubts, even after class hours. Truly dedicated staff.' },
+  { name: 'Sneha Gupta', role: 'RPSC Aspirant', text: 'I was struggling with RPSC syllabus, but the structured approach here made it much easier to manage.' },
+  { name: 'Vikram Meena', role: 'Computer Student', text: 'The computer lab is well-maintained and the instructors are very helpful with hands-on practice.' },
+  { name: 'Anjali Kumari', role: 'SSC Student', text: 'A very safe and focused environment for girls. I feel very comfortable studying here.' },
 ];
 
 const faqs = [
@@ -23,15 +26,37 @@ export default function ReviewSection() {
   return (
     <>
       {/* Testimonials */}
-      <section className="py-10 bg-background">
+      <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-[15px]">
+          <div className="text-center mb-12">
+            <h2 className="text-[28px] md:text-[36px] font-bold text-primary mb-3">What Our Students Say</h2>
+            <p className="text-muted text-[14px] md:text-[16px] max-w-2xl mx-auto">Real experiences from students who transformed their careers with Yatharth Foundation.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-surface rounded-[12px] p-5 shadow-md flex flex-col">
-                <p className="text-[12px] text-muted leading-[1.4] mb-4">"{t.text}"</p>
-                <div className="mt-auto text-[12px] font-semibold text-secondary">
-                  <span className="text-primary text-[14px] block mb-0.5">{t.name}</span>
-                  {t.role}
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true, margin: "-50px" }} 
+                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="bg-surface rounded-[20px] p-6 shadow-sm border border-[#E2E8F0] flex flex-col relative group"
+              >
+                <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" className="text-secondary">
+                    <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 7.34315 11.3601 6 13.017 6H19.017C20.6739 6 22.017 7.34315 22.017 9V15C22.017 16.6569 20.6739 18 19.017 18H17.017C16.4647 18 16.017 18.4477 16.017 19V21H14.017ZM2.01697 21L2.01697 18C2.01697 16.8954 2.9124 16 4.01697 16H7.01697C7.56925 16 8.01697 15.5523 8.01697 15V9C8.01697 8.44772 7.56925 8 7.01697 8H3.01697C2.46468 8 2.01697 8.44772 2.01697 9V12C2.01697 12.5523 1.56925 13 1.01697 13H-0.983032C-1.53532 13 -1.98303 12.5523 -1.98303 12V9C-1.98303 7.34315 -0.639885 6 1.01697 6H7.01697C8.67382 6 10.017 7.34315 10.017 9V15C10.017 16.6569 8.67382 18 7.01697 18H5.01697C4.46468 18 4.01697 18.4477 4.01697 19V21H2.01697Z" />
+                  </svg>
+                </div>
+                <p className="text-[14px] text-muted leading-[1.6] mb-6 italic">"{t.text}"</p>
+                <div className="mt-auto flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-bold text-[14px]">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <span className="text-primary font-bold text-[15px] block leading-tight">{t.name}</span>
+                    <span className="text-secondary text-[12px] font-medium">{t.role}</span>
+                  </div>
                 </div>
               </motion.div>
             ))}
