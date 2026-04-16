@@ -19,7 +19,7 @@ export default function Header() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className="font-extrabold text-[20px] text-primary tracking-tight">
-            YATHARTH<span className="text-secondary">FOUNDATION</span>
+            YATHARTH <span className="text-secondary">FOUNDATION</span>
           </div>
         </div>
 

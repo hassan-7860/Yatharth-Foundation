@@ -47,9 +47,16 @@ export default function ReviewSection() {
             <p className="text-muted text-[14px]">Glimpses of our classrooms and events.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-[15px]">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {[
+              { src: '/office.jpg', alt: 'Office Desk' },
+              { src: '/computer-lab.jpg', alt: 'Computer Lab' },
+              { src: '/award-ceremony.jpg', alt: 'Award Ceremony' },
+              { src: '/board-exam-2025.jpg', alt: 'Board Exam 2025' },
+              { src: '/student-event.jpg', alt: 'Student Event' },
+              { src: '/toppers.jpg', alt: 'Toppers' },
+            ].map((img, i) => (
               <motion.div key={i} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative aspect-[4/3] rounded-[12px] overflow-hidden group shadow-sm border border-[#E2E8F0]">
-                <Image src={`https://picsum.photos/seed/yatharth${i}/600/600`} alt={`Gallery image ${i}`} fill className="object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                <Image src={img.src} alt={img.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </motion.div>
             ))}
           </div>
